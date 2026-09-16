@@ -1,0 +1,1 @@
+import { buildRss } from "@/lib/rss"; export const revalidate = 1800; export async function GET() { return buildRss({ title: "Dev Parth — Poetry archive (all poems)", path: "/poems/rss.xml", limit: 100 }); }

@@ -1,0 +1,15 @@
+"use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { btnCls, inputCls } from "./ui";
+type M = { id: string; url: string; width: number | null; height: number | null; altText: string | null; sizeBytes: number; variants: { width: number; url: string; format: string }[]; createdAt: string };
+export function MediaLibrary({ items }: { items: M[] }) {
+  const router = useRouter(); const [busy, setBusy] = useState(false); const [err, setErr] = useState<string | null>(null);
+  const upload = async (e: React.FormEvent<HTMLFormElement>) => { e.preventDefault(); setBusy(true); setErr(null); const r = await fetch("/api/v1/admin/media", { method: "POST", body: new FormData(e.currentTarget) }); setBusy(false); if (!r.ok) setErr((await r.json()).error?.message ?? "Upload failed"); else { (e.target as HTMLFormElement).reset(); router.refresh(); } };
+  const alt = async (id: string, altText: string) => { await fetch(`/api/v1/admin/media/${id}`, { method: "PATCH", headers: { "content-type": "application/json" }, body: JSON.stringify({ altText }) }); };
+  const del = async (id: string) => { if (!confirm("Delete this image and all its sizes?")) return; await fetch(`/api/v1/admin/media/${id}`, { method: "DELETE" }); router.refresh(); };
+  return (<div className="font-ui text-sm">
+    <form onSubmit={upload} className="mb-8 flex flex-wrap items-center gap-2 rounded border rule p-4"><input name="file" type="file" accept="image/jpeg,image/png,image/webp,image/avif" required /><input name="altText" placeholder="Alt text (describe the image)" className={inputCls + " w-72"} /><button disabled={busy} className={btnCls}>{busy ? "Processing…" : "Upload"}</button><span className="text-xs text-ink-3">JPEG/PNG/WebP/AVIF ≤ 10 MB. Metadata is stripped; AVIF &amp; WebP sizes are generated.</span>{err && <span role="alert" className="text-red-700">{err}</span>}</form>
+    <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{items.map((m) => (<li key={m.id} className="rounded border rule p-3"><picture>{m.variants.filter((v) => v.format === "avif").length > 0 && <source type="image/avif" srcSet={m.variants.filter((v) => v.format === "avif").map((v) => `${v.url} ${v.width}w`).join(", ")} />}{ }<img src={m.variants.find((v) => v.format === "webp" && v.width === 480)?.url ?? m.url} alt={m.altText ?? ""} width={m.width ?? undefined} height={m.height ?? undefined} loading="lazy" className="aspect-[4/3] w-full rounded object-cover" /></picture><input defaultValue={m.altText ?? ""} placeholder="Alt text" onBlur={(e) => alt(m.id, e.target.value)} className={inputCls + " mt-2"} /><div className="mt-2 flex justify-between text-xs text-ink-3"><span>{m.width}×{m.height} · {Math.round(m.sizeBytes / 1024)} KB · {m.variants.length} variants</span><button type="button" onClick={() => del(m.id)} className="link text-red-700">delete</button></div><code className="mt-1 block truncate text-[10px] text-ink-3">{m.id}</code></li>))}{items.length === 0 && <li className="text-ink-3">No media yet. Cover images are optional — the archive is typography-first.</li>}</ul>
+  </div>);
+}

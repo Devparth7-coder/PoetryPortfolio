@@ -1,0 +1,18 @@
+# Self-hosted / VPS: docker compose up -d --build
+services:
+  db:
+    image: postgres:17-alpine
+    environment: { POSTGRES_USER: devparth, POSTGRES_PASSWORD: devparth, POSTGRES_DB: devparth_archive }
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck: { test: ["CMD-SHELL", "pg_isready -U devparth"], interval: 5s, retries: 10 }
+  web:
+    build: .
+    ports: ["3000:3000"]
+    env_file: .env.production      # copy .env.example; DATABASE_URL below overrides it
+    environment:
+      DATABASE_URL: postgres://devparth:devparth@db:5432/devparth_archive
+      STORAGE_LOCAL_DIR: /app/public/media
+    volumes: [media:/app/public/media]
+    depends_on: { db: { condition: service_healthy } }
+    restart: unless-stopped
+volumes: { pgdata: {}, media: {} }

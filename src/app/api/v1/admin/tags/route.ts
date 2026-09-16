@@ -1,0 +1,10 @@
+import { z } from "zod";
+import { ok, parseBody } from "@/lib/api";
+import { adminHandler } from "@/lib/admin-api";
+import { db } from "@/infrastructure/db/client"; import { tags, auditLogs } from "@/infrastructure/db/schema"; import { eq } from "drizzle-orm";
+import { slugify } from "@/domain/poem/slug";
+import { listTags } from "@/application/poems/poem-service";
+export const dynamic = "force-dynamic";
+export const GET = adminHandler(async () => ok(await listTags()));
+export const POST = adminHandler(async (req, _c, user) => { const b = await parseBody(req, z.object({ name: z.string().min(1).max(120), kind: z.enum(["theme", "mood", "form", "source-genre"]).default("theme"), description: z.string().max(500).optional() })); const [t] = await db.insert(tags).values({ slug: slugify(b.name), name: b.name, kind: b.kind, description: b.description }).onConflictDoUpdate({ target: tags.slug, set: { name: b.name, kind: b.kind } }).returning(); await db.insert(auditLogs).values({ actorId: user.id, actorEmail: user.email, action: "tag.upsert", entityType: "tag", entityId: t.id, summary: t.name }); return ok(t, { status: 201 }); });
+export const DELETE = adminHandler(async (req, _c, user) => { const { id } = await parseBody(req, z.object({ id: z.string().uuid() })); await db.delete(tags).where(eq(tags.id, id)); await db.insert(auditLogs).values({ actorId: user.id, actorEmail: user.email, action: "tag.delete", entityType: "tag", entityId: id }); return ok({ deleted: true }); }, { role: "OWNER" });

@@ -1,0 +1,383 @@
+{
+  "generatedAt": "2026-09-16T03:18:42.470Z",
+  "totalPoemsInArchive": 158,
+  "sources": {
+    "myPoeticSide": {
+      "indexed": 156,
+      "parsed": 156,
+      "created": 156,
+      "merged": 0,
+      "pending": 0,
+      "failures": []
+    },
+    "poetryCom": {
+      "indexed": 66,
+      "parsed": 25,
+      "created": 2,
+      "merged": 23,
+      "pending": 0,
+      "notRetrievable": 41
+    },
+    "anthology": {
+      "pages": 190,
+      "extracted": 156,
+      "created": 0,
+      "merged": 151,
+      "variants": 0,
+      "pending": 5
+    }
+  },
+  "requiresManualAction": [
+    {
+      "title": "?? ???? ?? ??? ??",
+      "status": "LOW_CONFIDENCE",
+      "flags": [
+        "no-date-in-source",
+        "non-latin-garbled",
+        "manual-review"
+      ],
+      "sourceUrl": null,
+      "reason": "Text extraction confidence too low (non-Latin text unrecoverable from PDF)",
+      "requiredAction": "Review in /admin/import"
+    },
+    {
+      "title": "???? ?? ????? ??????",
+      "status": "DUPLICATE_EXACT",
+      "flags": [
+        "no-date-in-source",
+        "non-latin-garbled",
+        "manual-review",
+        "duplicate-in-batch:#1"
+      ],
+      "sourceUrl": null,
+      "reason": "Needs review",
+      "requiredAction": "Review in /admin/import"
+    },
+    {
+      "title": "????? ?? ????",
+      "status": "DUPLICATE_EXACT",
+      "flags": [
+        "no-date-in-source",
+        "non-latin-garbled",
+        "manual-review",
+        "duplicate-in-batch:#1"
+      ],
+      "sourceUrl": null,
+      "reason": "Needs review",
+      "requiredAction": "Review in /admin/import"
+    },
+    {
+      "title": "????? ????? ??",
+      "status": "DUPLICATE_EXACT",
+      "flags": [
+        "no-date-in-source",
+        "non-latin-garbled",
+        "manual-review",
+        "duplicate-in-batch:#1"
+      ],
+      "sourceUrl": null,
+      "reason": "Needs review",
+      "requiredAction": "Review in /admin/import"
+    },
+    {
+      "title": "????????? ?? ????",
+      "status": "DUPLICATE_EXACT",
+      "flags": [
+        "no-date-in-source",
+        "non-latin-garbled",
+        "manual-review",
+        "duplicate-in-batch:#1"
+      ],
+      "sourceUrl": null,
+      "reason": "Needs review",
+      "requiredAction": "Review in /admin/import"
+    },
+    {
+      "id": "200817",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/200817/dance-of-question",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "198438",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/198438/i-and-you",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "198437",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/198437/alone-vs-lonely",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "198436",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/198436/lost-in-tears",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "198434",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/198434/it-my-last",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "198381",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/198381/fading-echoes",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "198221",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/198221/on-my-way",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "198220",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/198220/stay-with-me",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "198219",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/198219/the-last-day",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "198218",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/198218/tranquil-waters",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "198166",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/198166/let%27s-go",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "197903",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/197903/are-we-together",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "197806",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/197806/whether-i-lost-you-or-not",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "197697",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/197697/i-have-loved-you",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "196108",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/196108/courage",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "196107",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/196107/journey-of-the-star",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "195863",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/195863/the-abyss-of-nothingness",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "195197",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/195197/my-dearest-sisters",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "195104",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/195104/why-women%27s-weren%27t-safe",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "194981",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/194981/it%27s-me-vs.-me",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "194919",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/194919/why-that%27s-so",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "194863",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/194863/fragments-of-us",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "194800",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/194800/actually-who-i-am-and-what-i-am-doing",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "193419",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/193419/a-summer-day",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "193366",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/193366/tranquil-evening",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "193328",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/193328/dancing-flames",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "193296",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/193296/no-more",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "193188",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/193188/whispers-of-dawn",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "193014",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/193014/eternal-flame",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "192921",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/192921/from-shadows-to-sunrise",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "191322",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/191322/am-i-the-worst",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "189968",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/189968/we-meet-one-day",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "192043",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/192043/we-meet-one-day",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "159939",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/159939/rising-above-the-darkness%3A-a-fusion-of-motivation-and-sadness",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "159938",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/159938/oh-my-god",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "159832",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/159832/my-earth-looks-like",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "159827",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/159827/failure-rise-up",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "159826",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/159826/my-attitude",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "159818",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/159818/forgiveness%3A-the-bridge-to-peace",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "161032",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/161032/forgiveness%3A-the-bridge-to-peace",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    },
+    {
+      "id": "159817",
+      "title": "No image yet",
+      "url": "https://www.poetry.com/poem/159817/my-last-hope",
+      "reason": "page not retrievable automatically (site returned a challenge) — upload saved HTML via /admin/import",
+      "action": "manual-html-upload"
+    }
+  ]
+}

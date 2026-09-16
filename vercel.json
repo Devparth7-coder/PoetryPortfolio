@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "installCommand": "npm ci",
+  "buildCommand": "npm run db:migrate && npm run build",
+  "regions": ["bom1"],
+  "crons": [{ "path": "/api/v1/admin/cron/publish", "schedule": "*/10 * * * *" }],
+  "functions": {
+    "src/app/api/v1/admin/import/route.ts": { "maxDuration": 300, "memory": 1024 },
+    "src/app/api/v1/admin/media/route.ts": { "maxDuration": 60, "memory": 1024 }
+  }
+}

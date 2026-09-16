@@ -1,0 +1,57 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# Deploy: New → Blueprint → point at this repo. Creates the web service + Postgres + a cron job.
+databases:
+  - name: devparth-db
+    plan: basic-256mb
+    postgresMajorVersion: "17"
+
+services:
+  - type: web
+    name: devparth-archive
+    runtime: docker
+    plan: starter
+    region: singapore
+    healthCheckPath: /api/v1/session
+    autoDeploy: true
+    disk:                      # persistent disk for local media uploads (or set STORAGE_DRIVER=s3 and remove this)
+      name: media
+      mountPath: /app/public/media
+      sizeGB: 1
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase: { name: devparth-db, property: connectionString }
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_SITE_URL
+        sync: false            # set to https://<your-domain>
+      - key: AUTH_SECRET
+        generateValue: true
+      - key: CRON_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: ADMIN_NAME
+        value: Dev Parth
+      - key: STORAGE_DRIVER
+        value: local
+      - key: STORAGE_LOCAL_DIR
+        value: /app/public/media
+      - key: AI_PROVIDER
+        value: none
+      - key: LOG_LEVEL
+        value: info
+
+  - type: cron
+    name: devparth-scheduled-publish
+    runtime: node
+    schedule: "*/10 * * * *"
+    buildCommand: "true"
+    startCommand: >-
+      curl -fsS -H "Authorization: Bearer $CRON_SECRET" "$NEXT_PUBLIC_SITE_URL/api/v1/admin/cron/publish"
+    envVars:
+      - key: CRON_SECRET
+        fromService: { type: web, name: devparth-archive, envVarKey: CRON_SECRET }
+      - key: NEXT_PUBLIC_SITE_URL
+        fromService: { type: web, name: devparth-archive, envVarKey: NEXT_PUBLIC_SITE_URL }
